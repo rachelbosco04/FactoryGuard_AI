@@ -1,0 +1,3 @@
+Model,Dataset,PR_AUC,ROC_AUC,Precision,Recall,F1_Score
+LightGBM Weighted,Test,0.6943,0.8750,0.8263,0.7535,0.7882
+LightGBM SMOTE,Test,0.7350,0.8686,0.0000,0.0000,0.0000
