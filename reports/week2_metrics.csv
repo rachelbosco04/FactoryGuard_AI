@@ -1,0 +1,6 @@
+Model,Dataset,Precision,Recall,F1_Score,ROC_AUC,Accuracy
+Logistic Regression,Validation,0.0315,0.7778,0.0605,0.8267,0.6860
+Random Forest,Validation,1.0000,0.6781,0.8081,0.9958,0.9958
+LightGBM Untuned,Validation,0.8023,0.6823,0.7375,0.8335,0.9937
+LightGBM Untuned,Test,0.8263,0.7535,0.7882,0.8750,0.9936
+LightGBM Optuna Tuned,Validation,N/A,N/A,0.7776,N/A,N/A
