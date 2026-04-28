@@ -1,0 +1,96 @@
+# FactoryGuard AI — Week 3 Completion Report
+
+Project: IoT Predictive Maintenance Engine
+
+Week 3 Focus:
+Imbalance Handling + Explainability + Model Trust
+
+---
+
+1. Objective
+
+Evaluate advanced strategies for rare machine failure prediction
+and improve model interpretability for real-world deployment.
+
+Failure events are highly imbalanced, therefore Precision-Recall
+metrics were prioritized over raw accuracy.
+
+---
+
+2. Imbalance Handling Strategies Tested
+
+A. LightGBM with Class Weights
+
+* Used scale_pos_weight to prioritize rare failure cases
+* Preserved original industrial data distribution
+* Low memory overhead
+* Faster training
+
+B. LightGBM with SMOTE Oversampling
+
+* Applied synthetic minority oversampling on training data
+* Increased failure samples to improve class representation
+
+---
+
+3. Test Set Performance
+
+LightGBM Weighted
+
+PR-AUC     : 0.6943
+ROC-AUC    : 0.8750
+Precision  : 0.8263
+Recall     : 0.7535
+F1 Score   : 0.7882
+
+Observation:
+Best real-world balance of alert quality and failure detection.
+
+
+LightGBM SMOTE
+
+PR-AUC     : 0.7350
+ROC-AUC    : 0.8686
+Precision  : 0.0000
+Recall     : 0.0000
+F1 Score   : 0.0000
+
+Observation:
+Good ranking performance, but default threshold required recalibration.
+
+---
+
+4. Final Model Decision
+
+Selected Model:
+LightGBM Weighted
+
+Reason:
+Higher operational precision, strong recall, better deployment
+readiness, and more stable threshold behavior.
+
+---
+
+5. SHAP Explainability Outputs
+
+Generated:
+
+reports/week3_shap/shap_summary.png
+reports/week3_shap/shap_bar.png
+
+Purpose:
+
+* Global feature importance ranking
+* Explain model decision behavior
+* Improve maintenance team trust
+* Identify strongest failure drivers
+
+---
+
+6. Week 3 Outcome
+
+Successfully compared imbalance strategies and implemented
+model explainability using SHAP.
+
+
+# Status: COMPLETED
