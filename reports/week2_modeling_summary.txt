@@ -1,0 +1,113 @@
+# FactoryGuard AI — Week 2 Completion Report
+
+Project: IoT Predictive Maintenance Engine
+
+Week 2 Focus:
+Modeling + Baseline Comparison + Production Model + Hyperparameter Tuning
+
+---
+
+1. Objective
+
+Develop machine learning models to predict rare machine failures
+using engineered IoT sensor features from Week 1.
+
+Failure events are highly imbalanced (~0.87% of training data),
+therefore precision, recall, F1-score and ROC-AUC were prioritized
+over raw accuracy.
+
+---
+
+2. Models Implemented
+
+Baseline Models:
+
+* Logistic Regression
+* Random Forest Classifier
+
+Production Model:
+
+* LightGBM Gradient Boosting Model
+
+Hyperparameter Tuning:
+
+* Optuna Bayesian Optimization (50 Trials)
+
+---
+
+3. Validation Performance
+
+Logistic Regression
+Precision : 0.0315
+Recall    : 0.7778
+F1 Score  : 0.0605
+ROC-AUC   : 0.8267
+
+Observation:
+High failure detection recall, but too many false alarms.
+
+---
+
+Random Forest
+Precision : 1.0000
+Recall    : 0.6781
+F1 Score  : 0.8081
+ROC-AUC   : 0.8376
+
+Observation:
+Excellent precision and strong overall balance.
+
+---
+
+LightGBM (Untuned)
+Precision : 0.8023
+Recall    : 0.6823
+F1 Score  : 0.7375
+ROC-AUC   : 0.8335
+
+Observation:
+Fast training and strong production-ready performance.
+
+---
+
+LightGBM (Optuna Tuned)
+Best Validation F1 : 0.7776
+
+Observation:
+Hyperparameter tuning improved model balance and optimization.
+
+---
+
+4. Test Set Performance
+
+LightGBM (Held-Out Test Set)
+
+Precision : 0.8263
+Recall    : 0.7535
+F1 Score  : 0.7882
+ROC-AUC   : 0.8750
+Accuracy  : 0.99
+
+Observation:
+Strong real-world generalization on unseen machine data.
+
+---
+
+5. Final Model Assets Saved
+
+models/baseline_logistic_regression.joblib
+models/baseline_random_forest.joblib
+models/lightgbm_production.joblib
+models/lightgbm_optuna_best.joblib
+models/optuna_study.joblib
+
+---
+
+6. Week 2 Outcome
+
+Successfully built and compared multiple predictive maintenance
+models, handled severe class imbalance, optimized LightGBM using
+Optuna, and produced deployable model artifacts.
+
+
+# Status: COMPLETED
