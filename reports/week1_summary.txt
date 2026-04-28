@@ -1,0 +1,91 @@
+# FactoryGuard AI — Week 1 Completion Report
+
+Project: IoT Predictive Maintenance Engine
+
+Week 1 Focus:
+Data Foundation + Synthetic Expansion + Feature Engineering
+
+---
+
+1. Raw Dataset
+
+Source Dataset:
+AI4I 2020 Predictive Maintenance Dataset
+
+Base Variables:
+
+* Air Temperature
+* Process Temperature
+* Rotational Speed
+* Torque
+* Tool Wear
+* Failure Label
+
+---
+
+2. Synthetic Industrial Expansion
+
+Simulated Assets        : 500 Machines
+Time Frequency          : Hourly
+Historical Window       : 30 Days
+Total Rows Generated    : 360,000
+
+Added Realistic Behavior:
+
+* Sensor noise
+* Tool wear drift
+* Operational variability
+* Rare failure events
+
+Failure Count           : 3,753
+Failure Rate            : ~1.04%
+
+---
+
+3. Data Quality Validation
+
+* No missing values
+* Correct timestamps
+* Proper machine IDs
+* Clean schema
+* ML-ready structure
+
+---
+
+4. Dataset Split
+
+Train Rows              : 251,999
+Validation Rows         : 54,001
+Test Rows               : 54,000
+
+Split Ratio             : 70 / 15 / 15
+
+---
+
+5. Feature Engineering
+
+Generated Features:
+* Rolling Mean (1h / 6h / 12h)
+* Rolling Std Dev
+* EMA
+* Lag Features (t-1, t-2)
+* Trend Signals
+
+Columns Before FE       : 8
+Columns After FE        : 63
+New Features Added      : 55
+
+Artifacts Generated:
+
+* train_features.joblib
+* val_features.joblib
+* test_features.joblib
+
+---
+
+6. Week 1 Outcome
+
+Successfully built a production-style predictive maintenance dataset pipeline and model-ready engineered feature sets.
+
+
+# Status: COMPLETED
