@@ -56,13 +56,14 @@ for i in range(1, NUM_MACHINES + 1):
 
     # failures
     fail = (
-        (sample["tool_wear_[min]"] > 220) &
-        (sample["torque_[nm]"] > 50)
-    )
+    (sample["tool_wear_[min]"] > 180) |
+    (sample["torque_[nm]"] > 65) |
+    (sample["process_temperature_[k]"] > 340)
+)
 
     sample["failure"] = np.where(fail, 1, 0)
 
-    random_fail = np.random.choice(HOURS, size=3, replace=False)
+    random_fail = np.random.choice(HOURS, size=10, replace=False)
     sample.loc[random_fail, "failure"] = 1
 
     all_data.append(sample)
